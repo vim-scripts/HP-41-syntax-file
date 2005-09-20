@@ -1,0 +1,6 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1360
+
+The HP-41 syntax highlighting goes well with the HP-41 file type plugin to facilitate easy writing of HP-41 programs in VIM.
+
+There is a matching file type plugin here:
+http://vim.sourceforge.net/scripts/edit_script.php?script_id=1361
