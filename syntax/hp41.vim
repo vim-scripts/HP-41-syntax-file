@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:	HP-41
-" Version:	0.1
+" Version:	0.2
 " Maintainer:	Geir Isene
 " Last Change:	2005-09-17
 " Filenames:    *.41
@@ -15,7 +15,8 @@ elseif exists("b:current_syntax")
 endif
 
 syntax match  hp41LineNumber	"^[0-9]*"
-syntax match  hp41LBL		"\*LBL.*"
+syntax match  hp41LBL		".\=LBL"
+syntax match  hp41LBL		".\=LBL [0-9]*"
 syntax match  hp41GTO		"GTO.*"
 syntax match  hp41XEQ		"XEQ.*"
 syntax match  hp41RTN		"RTN.*"
