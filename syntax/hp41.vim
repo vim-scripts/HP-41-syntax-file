@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:	HP-41
-" Version:	0.6
+" Version:	0.7
 " Maintainer:	Geir Isene
 " Last Change:	2010-11-18
 " Filenames:    *.41
@@ -21,6 +21,7 @@ syntax match  hp41XEQ		"XEQ.*"
 syntax match  hp41RTN		"RTN.*"
 syntax match  hp41END		"END.*"
 syntax match  hp41Alpha		"\".*\""
+syntax match  hp41Cond		" [0-9A-Za-z_ ]*?[0-9A-Za-z_ ]*"
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -40,6 +41,7 @@ if version >= 508 || !exists("did_crontab_syn_inits")
   HiLink hp41RTN		Define
   HiLink hp41END		Define
   HiLink hp41Alpha		Comment
+  HiLink hp41Cond		Function
 
   delcommand HiLink
 endif
