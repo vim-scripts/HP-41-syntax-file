@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:	HP-41
-" Version:	0.7
+" Version:	0.8
 " Maintainer:	Geir Isene
-" Last Change:	2010-11-18
+" Last Change:	2012-02-05
 " Filenames:    *.41
 " URL:		http://isene.com/
 
@@ -15,13 +15,13 @@ elseif exists("b:current_syntax")
 endif
 
 syntax match  hp41LineNumber	"^ *[0-9]*"
-syntax match  hp41LBL		".\=LBL [0-9]*"
+syntax match  hp41LBL		".\=LBL.*"	    contains=hp41Alpha
 syntax match  hp41GTO		"GTO.*"
-syntax match  hp41XEQ		"XEQ.*"
+syntax match  hp41XEQ		"XEQ [0-9]*"
 syntax match  hp41RTN		"RTN.*"
 syntax match  hp41END		"END.*"
+syntax match  hp41Cond		" [A-Z<>=0-9].*?.*"
 syntax match  hp41Alpha		"\".*\""
-syntax match  hp41Cond		" [0-9A-Za-z_ ]*?[0-9A-Za-z_ ]*"
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -40,8 +40,8 @@ if version >= 508 || !exists("did_crontab_syn_inits")
   HiLink hp41XEQ		Structure
   HiLink hp41RTN		Define
   HiLink hp41END		Define
-  HiLink hp41Alpha		Comment
-  HiLink hp41Cond		Function
+  HiLink hp41Alpha		Function
+  HiLink hp41Cond		Comment
 
   delcommand HiLink
 endif
